@@ -1,0 +1,213 @@
+🔧 Git & GitHub Overview
+Git is a version control system used to track changes in source code during software development.
+GitHub is a cloud-based hosting platform for Git repositories. It enables collaboration, code review, and remote versioning.
+=================================================================================================================================
+📁 Types of Git Repositories
+Local Repository
+Exists on your computer. You make changes, commit code, and test locally.
+
+Remote Repository
+Hosted on platforms like GitHub, GitLab, or Bitbucket. Used for sharing code with others and backing up.
+=================================================================================================================================
+
+✅ Common Git Commands
+🔍 Check Git Installation
+
+
+
+git --version
+Check your installed Git version.
+---------------------------------------------------------------------------------
+
+⚙️ Set Global Configurations
+
+
+
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+Sets global user identity used in commits.
+---------------------------------------------------------------------------------
+🏗️ Initialize Git in a Folder
+
+
+
+git init
+Initializes a new Git repository in your local directory.
+---------------------------------------------------------------------------------
+🔄 Clone an Existing Remote Repository
+
+
+
+git clone <remote_repo_url>
+Downloads a remote repo and sets it as a local repo.
+---------------------------------------------------------------------------------
+📂 Check Repo Status
+
+
+
+git status
+Shows the state of the working directory and staged files.
+---------------------------------------------------------------------------------
+➕ Add Files to Staging Area
+
+
+
+git add <filename>      # Add a single file
+git add .               # Add all files
+Stages files to be committed.
+---------------------------------------------------------------------------------
+✅ Commit Changes
+
+
+
+git commit -m "Your commit message"
+Saves the staged changes in your local repository.
+---------------------------------------------------------------------------------
+🌱 Create & List Branches
+
+
+
+git branch                 # Lists branches
+git branch <branch_name>  # Creates a new branch
+🔁 Switch Between Branches
+
+
+
+git checkout <branch_name>      # Old method
+git switch <branch_name>        # Modern method (Git 2.23+)
+🔗 Add a Remote Repository
+
+
+
+git remote add origin <remote_repo_url>
+Links your local repo to a remote one (usually GitHub).
+---------------------------------------------------------------------------------
+🚀 Push Changes to Remote Repository
+
+
+
+git push origin <branch_name>
+Sends your commits to the remote repository.
+---------------------------------------------------------------------------------
+📥 Pull Changes from Remote
+
+
+
+git pull origin <branch_name>
+Fetches and merges changes from remote to local branch.
+---------------------------------------------------------------------------------
+🔀 Merge Branches
+
+
+
+git merge <branch_name>
+Merges the specified branch into the current branch.
+---------------------------------------------------------------------------------
+🔍 git log – View Commit History
+Purpose:
+Shows the commit history of the repository in reverse chronological order (latest commit first).
+
+Syntax:
+
+
+
+
+git log
+Common options:
+
+
+
+
+git log --oneline          # One line per commit
+git log --graph            # ASCII graph of branches and merges
+git log -p                 # Shows diff introduced in each commit
+git log --since="1 week ago"
+Example Output:
+
+pgsql
+
+
+commit 48a2fdd
+Author: Alice <alice@example.com>
+Date:   Tue Jun 17 10:24 2025
+
+    Fixed login issue on mobile
+📄 git diff – Show Changes Between Versions
+Purpose:
+Displays line-by-line differences between:
+
+Your working directory and staging area
+
+The staging area and last commit
+
+Any two commits
+
+Syntax:
+
+
+
+
+git diff                    # Changes not staged
+git diff --staged           # Changes staged but not yet committed
+git diff <commit1> <commit2>  # Differences between two commits
+Use Case:
+You want to review your current modifications before staging or committing them.
+---------------------------------------------------------------------------------
+🔎 git show – Display a Commit in Detail
+Purpose:
+Shows metadata and changes made in a specific commit.
+
+Syntax:
+
+
+
+
+git show <commit_hash>
+What it shows:
+
+Commit message
+
+Author
+
+Date/time
+
+File changes (diffs)
+
+Example:
+
+
+
+
+git show 48a2fdd
+---------------------------------------------------------------------------------
+❌ git rm – Remove Files
+Purpose:
+Deletes a file from both your working directory and Git tracking.
+
+Syntax:
+
+
+
+
+git rm <file>               # Removes file from repo and disk
+git rm --cached <file>      # Removes file from Git only, keeps locally
+Use Case:
+You want Git to stop tracking a file or remove it entirely from the project.
+---------------------------------------------------------------------------------
+📦 git stash – Save Work-in-Progress
+Purpose:
+Temporarily saves your uncommitted changes so you can work on something else (like switching branches), then reapply them later.
+
+Syntax:
+
+
+
+
+git stash                   # Save current changes
+git stash save "message"    # Save with custom message
+git stash list              # View all stashed items
+git stash apply             # Reapply the most recent stash
+git stash pop               # Reapply and delete the most recent stash
+git stash drop stash@{0}    # Delete a specific stash
+Use Case:
+You're mid-task and need to switch branches without committing incomplete work.
