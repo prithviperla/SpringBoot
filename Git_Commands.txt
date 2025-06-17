@@ -65,40 +65,39 @@ Saves the staged changes in your local repository.
 ---------------------------------------------------------------------------------
 🌱 Create & List Branches
 
-
-
 git branch                 # Lists branches
 git branch <branch_name>  # Creates a new branch
+
 🔁 Switch Between Branches
-
-
 
 git checkout <branch_name>      # Old method
 git switch <branch_name>        # Modern method (Git 2.23+)
+
 🔗 Add a Remote Repository
-
-
 
 git remote add origin <remote_repo_url>
 Links your local repo to a remote one (usually GitHub).
+
+🗑️ Delete a Local Branch
+
+git branch -d <branch_name>
+Safely deletes the branch (only if it's fully merged).
+
+
+git branch -D <branch_name>
+Force deletes the branch (even if it's not merged).
 ---------------------------------------------------------------------------------
 🚀 Push Changes to Remote Repository
-
-
 
 git push origin <branch_name>
 Sends your commits to the remote repository.
 ---------------------------------------------------------------------------------
 📥 Pull Changes from Remote
 
-
-
 git pull origin <branch_name>
 Fetches and merges changes from remote to local branch.
 ---------------------------------------------------------------------------------
 🔀 Merge Branches
-
-
 
 git merge <branch_name>
 Merges the specified branch into the current branch.
@@ -109,14 +108,8 @@ Shows the commit history of the repository in reverse chronological order (lates
 
 Syntax:
 
-
-
-
 git log
 Common options:
-
-
-
 
 git log --oneline          # One line per commit
 git log --graph            # ASCII graph of branches and merges
@@ -158,8 +151,6 @@ Purpose:
 Shows metadata and changes made in a specific commit.
 
 Syntax:
-
-
 
 
 git show <commit_hash>
